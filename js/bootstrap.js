@@ -4526,26 +4526,3 @@ function throwAlert() {
 
 })));
 //# sourceMappingURL=bootstrap.js.map
-
-
-
-
-
-// const Tabletop = require('tabletop');
-
-//  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/14J1dPNFRejP93AgT15KQldihWKj4Vdpa8w-IZ33x3Bc/edit?usp=sharing';
-
-// function init() {
-//     Tabletop.init( { key: publicSpreadsheetUrl,
-//                      callback: showInfo,
-//                      simpleSheet: false } )
-//   }
-
-//  function showInfo(data, tabletop) {
-//   // do something with the data
-//   console.log(JSON.stringify(data, null, 2));
-// }
-
-// //initialise and kickstart the whole thing.
-// init();
-// showInfo();
