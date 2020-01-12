@@ -584,7 +584,7 @@ pre code {
 }
 
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
-  width: 100%;
+  width: 80%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -4607,7 +4607,7 @@ input[type="button"].btn-block {
 }
 
 .navbar {
-  position: relative;
+  position: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4619,7 +4619,7 @@ input[type="button"].btn-block {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 2rem 2rem;
 }
 
 .navbar .container,
