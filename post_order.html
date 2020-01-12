@@ -9,6 +9,7 @@
 
     <script src="js/post_order.js" charset="utf-8"></script>
 
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/post_order.css">
@@ -62,6 +63,7 @@
                                     <label for="header"> <i class="glyphicon glyphicon-pencil"></i> Location: </label>
                                     <input id="header" class="form-control" type="text" placeholder="Enter Your Location">
                                 </div>
+                              
                                 <div class="form-group">
                                     <label for="post"><i class="glyphicon glyphicon-align-justify"></i> Food Description: </label>
                                     <textarea id="post" class="form-control" type="text" placeholder="What kind of food are you ordering?" name="message" rows="4" cols="33" maxlength="1000"
@@ -119,7 +121,11 @@
                 zoom: 12
                 });
 
-                infoWindow = new google.maps.InfoWindow;
+                mark = new google.maps.Marker({
+                icon: {
+                url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                }
+                });
 
                 // Try HTML5 geolocation.
                 if (navigator.geolocation) {
@@ -129,30 +135,36 @@
                 lng: position.coords.longitude
                 };
 
-                infoWindow.setPosition(pos);
-                infoWindow.setContent('Your Location');
-                infoWindow.open(map);
+                mark.setPosition(pos);
+                mark.setTitle('Your Location');
+                mark.setMap(map);
+
                 map.setCenter(pos);
                 }, function() {
-                handleLocationError(true, infoWindow, map.getCenter());
+                handleLocationError(true, mark, map.getCenter());
                 });
                 } else {
                 // Browser doesn't support Geolocation
-                handleLocationError(false, infoWindow, map.getCenter());
+                handleLocationError(false, mark, map.getCenter());
                 }
                 }
 
-                function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-                infoWindow.setPosition(pos);
-                infoWindow.setContent(browserHasGeolocation ?
+                function handleLocationError(browserHasGeolocation, mark, pos) {
+                
+                mark.setPosition(pos);
+                mark.setTitle(browserHasGeolocation ?
                 'Error: The Geolocation service failed.' :
                 'Error: Your browser doesn\'t support geolocation.');
-                infoWindow.open(map);
+                mark.setMap(map);
                 }
             </script>
+
+            
+
             <script async defer
                     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN0N0eXPaGf_ppSAnQCLwW82-llylChSA&callback=initMap">
             </script>
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN0N0eXPaGf_ppSAnQCLwW82-llylChSA&libraries=places"></script>
 
             <!-- Optional JavaScript -->
             <!-- jQuery first, then Popper.js, then Bootstrap JS -->
