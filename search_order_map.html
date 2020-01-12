@@ -10,39 +10,42 @@
     <title>Pizza Share</title>
   </head>
   <body>
-    <div class="header">
+    <div class = "container">
+      <div class="header">
         <h1>Pizza Share</h1>
-    </div>
+      </div>
 
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="post_order.html">Post an order</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" /*data-toggle="dropdown"*/ href="search_order_list.html" role="button" aria-haspopup="true" aria-expanded="false">Switch to List View</a>
-        /*<div class="dropdown-menu">
-          <a class="dropdown-item" href="search_order_map.html">Search by map</a>
-          <a class="dropdown-item" href="#">Search by list</a>
-        </div>*/
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Current orders</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Setup payment</a>
-      </li>
-    </ul>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="post_order.html">Post an order</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="search_order_list.html" role="button" aria-haspopup="true" aria-expanded="false">Switch to List View</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="search_order_map.html">Search by map</a>
+            <a class="dropdown-item" href="#">Search by list</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Current orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Setup payment</a>
+        </li>
+      </ul>
 
     
-    <!--Google map-->
-    <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 1000px">
+      <!--Google map-->
+      <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 1000px">
         <iframe src="https://maps.google.com/maps?q=UBC&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
         style="border:0" allowfullscreen></iframe>
       </div>
       <!--Google Maps-->
+    </div>
+    
 
 
     <!-- Optional JavaScript -->
