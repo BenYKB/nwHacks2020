@@ -1,3 +1,10 @@
+throwAlert();
+
+function throwAlert() {
+  alert("OMG");
+}
+
+
 /*!
   * Bootstrap v4.4.1 (https://getbootstrap.com/)
   * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
@@ -4519,18 +4526,26 @@
 
 })));
 //# sourceMappingURL=bootstrap.js.map
-// Download the helper library from https://www.twilio.com/docs/node/install
-// Your Account Sid and Auth Token from twilio.com/console
-// DANGER! This is insecure. See http://twil.io/secure
 
-const accountSid = 'ACc5f833286fe7ee127f3568906b142b75';
-const authToken = '85346d554c999da45d96a8dce2e93c10';
-const client = require('twilio')(accountSid, authToken);
 
-client.messages
-      .create({
-         from: 'whatsapp:+12563650941',
-         body: 'Hello there!',
-         to: 'whatsapp:+17793255952'
-       })
-      .then(message => console.log(message.sid));
+
+
+
+// const Tabletop = require('tabletop');
+
+//  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/14J1dPNFRejP93AgT15KQldihWKj4Vdpa8w-IZ33x3Bc/edit?usp=sharing';
+
+// function init() {
+//     Tabletop.init( { key: publicSpreadsheetUrl,
+//                      callback: showInfo,
+//                      simpleSheet: false } )
+//   }
+
+//  function showInfo(data, tabletop) {
+//   // do something with the data
+//   console.log(JSON.stringify(data, null, 2));
+// }
+
+// //initialise and kickstart the whole thing.
+// init();
+// showInfo();
