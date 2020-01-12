@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -39,7 +39,6 @@
             </li>
         </ul>
 
-        <title>Geolocation</title>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
         <meta charset="utf-8">
         <style>
@@ -73,7 +72,6 @@
         zoom: 12
         });
 
-        infoWindow = new google.maps.InfoWindow;
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -82,26 +80,40 @@
         lat: position.coords.latitude,
         lng: position.coords.longitude
         };
-
-        infoWindow.setPosition(pos);
-        infoWindow.setContent('I KNOW WHERE YOU LIVE');
-        infoWindow.open(map);
         map.setCenter(pos);
+
+        mark = new google.maps.Marker({
+            position: pos,
+            map: map,
+            animation: google.maps.Animation.DROP
+        }) marker.addListener('click', toggleBounce);
+
+        function toggleBounce() {
+            if (marker.getAnimation() !== null) {
+                marker.setAnimation(null);
+            } else {
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
+        }
+
         }, function() {
-        handleLocationError(true, infoWindow, map.getCenter());
+        handleLocationError(true, mark, map.getCenter());
         });
         } else {
         // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
+        handleLocationError(false, mark, map.getCenter());
         }
         }
 
-        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-        'Error: The Geolocation service failed.' :
-        'Error: Your browser doesn\'t support geolocation.');
-        infoWindow.open(map);
+        function handleLocationError(browserHasGeolocation, Marker, pos) {
+        mark = new google.maps.Marker({
+            position: pos,
+            map: map,
+            animation: google.maps.Animation.DROP
+        }) marker.addListener('click', toggleBounce);
+        Marker.setTitle(browserHasGeolocation ?
+        'Error: The Geolocation service failed RIP.' :
+        'Error: Your browser doesn\'t support geolocation RIP.');
         }
     </script>
     <script async defer
