@@ -2,6 +2,31 @@ body {
   background: white;
 }
 
+.column {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+#postorderheader {
+    text-align: left;
+}
+
+.form-group {
+    text-align: left;
+}
+
 .style-top-of-page {
   border: red;
   border-radius: 1em;
