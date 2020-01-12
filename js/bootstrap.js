@@ -4519,3 +4519,18 @@
 
 })));
 //# sourceMappingURL=bootstrap.js.map
+// Download the helper library from https://www.twilio.com/docs/node/install
+// Your Account Sid and Auth Token from twilio.com/console
+// DANGER! This is insecure. See http://twil.io/secure
+
+const accountSid = 'ACc5f833286fe7ee127f3568906b142b75';
+const authToken = '85346d554c999da45d96a8dce2e93c10';
+const client = require('twilio')(accountSid, authToken);
+
+client.messages
+      .create({
+         from: 'whatsapp:+12563650941',
+         body: 'Hello there!',
+         to: 'whatsapp:+17793255952'
+       })
+      .then(message => console.log(message.sid));
