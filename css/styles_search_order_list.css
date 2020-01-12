@@ -1,0 +1,95 @@
+body {
+  background: white;
+}
+
+.style-top-of-page {
+  border: red;
+  border-radius: 1em;
+  background-color: red;
+  font-family: "Arial";
+  color: white;
+  padding: 1em;
+  margin-top: 1em;
+  margin-right: 1em;
+}
+
+.style-new-post-form {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+/* .style-reply {
+  border: solid black 2px;
+  background-color: lightcyan;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+} */
+
+/* .style-post {
+  border: solid black 2px;
+  background-color: lightblue;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+} */
+
+.style-reply-to-post {
+  margin-left: 1em;
+}
+
+
+.style-search-form {
+  border-radius: 1em;
+  background-color: grey;
+  padding: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#searchPerson{
+  font-family: "Arial";
+  font-weight: bold;
+  font-style: italic;
+  border: black;
+}
+
+/* REMOVED THE SIDE NAVIGATION BAR
+.sidenav {
+    width: 8em;
+    border-radius: 1em;
+    position: fixed;
+    z-index: 1;
+    top: 1em;
+    left: 1em;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 0.5em 0;
+}
+
+.sidenav a {
+    padding: 0.3em 0.8em 0.3em 0.8em;
+    text-decoration: none;
+    font-size: 20px;
+    color: #2196F3;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #064579;
+}
+*/
+
+.main {
+    font-family: "Arial";
+    margin-left: 3em;
+    margin-right: 3em;
+    //padding: 0px 10px;
+}
+
+/*
+@media screen and (max-height: 100px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+*/

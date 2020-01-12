@@ -9,38 +9,102 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <title>Pizza Share</title>
   </head>
-  <body>
-    <div class="header">
-        <h1>Pizza Share</h1>
-    </div>
 
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="post_order.html">Post an order</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Search nearby orders</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="search_order_map.html">Search by map</a>
-          <a class="dropdown-item" href="#">Search by list</a>
+  <body>
+    <div class = "container">
+      <div class="header">
+        <h1>Pizza Share</h1>
+      </div>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="post_order.html">Post an order</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Search nearby orders</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="search_order_map.html">Search by map</a>
+            <a class="dropdown-item" href="search_order_list.html">Search by list</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Current orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Setup payment</a>
+        </li>
+      </ul>
+
+
+      <div class = "form-row">
+        <div class = "form-group col-sm">
+          <h1>placeholder</h1>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Current orders</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Setup payment</a>
-      </li>
-    </ul>
+    
+        <div class = "form-group col-sm">
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" class="form-control" id="inputPassword4">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Address 2</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState">Province</label>
+                <select id="inputState" class="form-control">
+                  <option selected>British Columbia</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Remember me
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  
 
     <!-- Optional JavaScript -->
+    <script src="js/nav.js"></script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+    <script src='js/sheetDatabase.js'></script>
   </body>
 </html>
