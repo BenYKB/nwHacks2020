@@ -1,0 +1,104 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Pizza Share</title>
+
+    <!-- Paypal stuff -->
+     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures optimal rendering on mobile devices. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
+
+    <style>
+        #paypal-button-container {
+            height: auto;
+            width: 50%;
+            margin: auto;
+            padding-top: 50px;
+        }
+    </style>
+  </head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Pizza Share</h1>
+        </div>
+
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="post_order.html">Post an order</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Search nearby orders</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="search_order_map.html">Search by map</a>
+                    <a class="dropdown-item" href="post_order.html">Search by list</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Current orders</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="setup_payment">Setup payment</a>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+
+
+    <div id="paypal-button-container"></div>
+
+    <script>
+        paypal.Buttons({
+        createOrder: function(data, actions) {
+        // This function sets up the details of the transaction, including the amount and line item details.
+        return actions.order.create({
+        purchase_units: [{
+        amount: {
+        value: '5.00'
+        }
+        }]
+        });
+        },onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        alert('Transaction completed by ' + details.payer.name.given_name);
+        // Call your server to save the transaction
+        return fetch('/paypal-transaction-complete', {
+          method: 'post',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify({
+            orderID: data.orderID
+          })
+        });
+      });
+    }
+  }).render('#paypal-button-container');
+
+  
+
+    </script>
+
+  
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
