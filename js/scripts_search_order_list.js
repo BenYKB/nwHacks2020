@@ -42,6 +42,8 @@ Post.prototype.createPost = function() {
   $("#results").append("<div class = 'container'><div class='panel panel-info'><div class='panel-heading panel-info' id='first-post-" + topicsObject.currentId + "'><h2><strong>" + this.header + "</strong></h2><h5>" + this.name + "</h5><h5>" + theCurrentTime.toDateString() + "</h5></div><div class='panel-body'>" + this.post + "<br>" +
   "</div><div id='first-post-footer-" + topicsObject.currentId + "' class='panel-footer'>" + createReplyLink(topicsObject.currentId,0) + "</div></div></div>");
   $(".sidenav").append("<a href='#first-post-" + topicsObject.currentId + "'>" + this.header + "</a>")
+
+
 }
 
 //function createReplyLink creates the Reply Post button dynamically after every post
@@ -111,5 +113,16 @@ $(document).ready(function(){
     $("#name").val("");
     $("#header").val("");
     $("#post").val("");
+
+    //test JSON
+    var obj = {"name" : name, "header" : header, "post" : post}
+    var s = JSON.stringify(obj)
+    alert(s)
+
+    var jsonObj = JSON.parse(s)
+    var jsonPost = new Post(jsonObj.name, jsonObj.header, jsonObj.post)
+    jsonPost.createPost()
+    topicsObject.addPost(jsonPost)
+
   });
 });
