@@ -1,3 +1,25 @@
+//INIT
+var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/14J1dPNFRejP93AgT15KQldihWKj4Vdpa8w-IZ33x3Bc/edit?usp=sharing';
+
+      function init() {
+        Tabletop.init( { key: publicSpreadsheetUrl,
+                         callback: showInfo,
+                         simpleSheet: true } )
+      }
+
+      function showInfo(data, tabletop) {
+
+        for (var i = 0; i < data.length; i++) {
+          var jsonPost = new Post(data[i].name, data[i].location, data[i].content)
+          jsonPost.createPost()
+          topicsObject.addPost(jsonPost)
+        }
+        
+      }
+
+      window.addEventListener('DOMContentLoaded', init)
+
+      
 //Business logic for topic
 function Topic() {
   this.posts = [],
@@ -39,7 +61,7 @@ Post.prototype.addReply = function (replyObjectPost) {
 //creates the initial post with a new topic
 Post.prototype.createPost = function() {
   var theCurrentTime = new Date();
-  $("#results").append("<div class = 'container'><div class='panel panel-info'><div class='panel-heading panel-info' id='first-post-" + topicsObject.currentId + "'><h2><strong>" + this.header + "</strong></h2><h5>" + this.name + "</h5><h5>" + theCurrentTime.toDateString() + "</h5></div><div class='panel-body'>" + this.post + "<br>" +
+  $("#results").append("<div class = 'container'><div class='panel panel-info'><div class='panel-heading panel-info' id='first-post-" + topicsObject.currentId + "'><h2><strong>" + this.name + "</strong></h2><h5>" + this.header + "</h5><h5>" + theCurrentTime.toDateString() + "</h5></div><div class='panel-body'>" + this.post + "<br>" +
   "</div><div id='first-post-footer-" + topicsObject.currentId + "' class='panel-footer'>" + createReplyLink(topicsObject.currentId,0) + "</div></div></div>");
   $(".sidenav").append("<a href='#first-post-" + topicsObject.currentId + "'>" + this.header + "</a>")
 
@@ -48,7 +70,7 @@ Post.prototype.createPost = function() {
 
 //function createReplyLink creates the Reply Post button dynamically after every post
 function createReplyLink(postId,replyId) {
-  return "<div id='reply-div-" + postId+ replyId + "'><button data-postid='" + postId + "' data-id='" + replyId + "' type='button' class='btn btn-default btn-reply-post'>Reply post</button></div>";
+  return "<div id='reply-div-" + postId+ replyId + "'><button data-postid='" + postId + "' data-id='" + replyId + "' type='button' class='btn btn-primary btn-reply-post'>Reply post</button></div>";
 }
 
 //function createReplyTextArea creates the form on the DOM with the fields userName and space for the user to reply to the post
@@ -57,7 +79,7 @@ function createReplyTextArea(postId, replyId) {
   "<div class='form-group'><label for='name'><i class='glyphicon glyphicon-user'></i> Name:</label>" +
   "<input id='replyname' class='form-control' type='text' placeholder='Enter Your Name'></div>" +
   "<div class='form-group'><label for='header'><i class='glyphicon glyphicon-pencil'></i> Reply Message:</label>" +"<input id='replymsg' class='form-control' type='text' placeholder='Enter Your Reply'></div>" +
-  "<button data-postid='" + postId + "' data-id='" + replyId + "' type='button' class='btn btn-reply-submit'><i class='glyphicon glyphicon-plus'></i>  Reply post</button></div>";
+  "<button data-postid='" + postId + "' data-id='" + replyId + "' type='button' class='btn btn-primary btn-reply-submit'><i class='glyphicon glyphicon-plus'></i>  Reply post</button></div>";
 }
 
 //function displayReply displays the reply in a new well
@@ -113,16 +135,5 @@ $(document).ready(function(){
     $("#name").val("");
     $("#header").val("");
     $("#post").val("");
-
-    //test JSON
-    var obj = {"name" : name, "header" : header, "post" : post}
-    var s = JSON.stringify(obj)
-    alert(s)
-
-    var jsonObj = JSON.parse(s)
-    var jsonPost = new Post(jsonObj.name, jsonObj.header, jsonObj.post)
-    jsonPost.createPost()
-    topicsObject.addPost(jsonPost)
-
   });
 });

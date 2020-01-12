@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -14,149 +14,161 @@
   <body>
       
 
-      <div class="container">
+    <div class="container">
 
-          <div class="header">
-              <img SRC="twitter_header_photo_1.png" ALT="PizzaShare" WIDTH=500 HEIGHT=159> 
+      <div class="header">
+          <img SRC="twitter_header_photo_1.png" ALT="PizzaShare" WIDTH=500 HEIGHT=159> 
+      </div>
+
+      <ul class="nav nav-pills">
+          <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="post_order.html">Post or search for an order</a>
+          </li>
+          <!--REMOVED AS THESE WERE ALL MERGED WITH POST ORDER-->
+          <!--
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Search nearby orders</a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="search_order_map.html">Search by map</a>
+                  <a class="dropdown-item" href="post_order.html">Search by list</a>
+              </div>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Current orders</a>
+          </li>
+            -->
+          <li class="nav-item">
+              <a class="nav-link" href="setup_payment.html">Pay</a>
+          </li>
+      </ul>
+
+
+      <div class="form-row">
+          <!--Image-->
+          <div class="form-group col-md-6">
+              <img src="https://s1.1zoom.me/big0/590/Pizza_Closeup_Sausage_Olive_Bokeh_Sliced_food_573425_1280x854.jpg" class="img-fluid"></a>
+              </img>
           </div>
 
-          <ul class="nav nav-pills">
-              <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="post_order.html">Post or search for an order</a>
-              </li>
-              <!--REMOVED AS THESE WERE ALL MERGED WITH POST ORDER-->
-              <!--
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Search nearby orders</a>
-                  <div class="dropdown-menu">
-                      <a class="dropdown-item" href="search_order_map.html">Search by map</a>
-                      <a class="dropdown-item" href="post_order.html">Search by list</a>
-                  </div>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Current orders</a>
-              </li>
-               -->
-              <li class="nav-item">
-                  <a class="nav-link" href="setup_payment.html">Setup payment</a>
-              </li>
-          </ul>
+          <div class="form-group col-md-6"> 
+            <!--Sign up pop-up-->
+            <div class="text-center">
+              <a href="" class="btn btn-primary btn-rounded mb-4" data-toggle="modal" data-target="#modalSignUpForm">Sign Up</a>
+            </div>
 
+            <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
 
-          <div class="form-row">
-              <div class="form-group col-md-6">
-                  <img src="https://s1.1zoom.me/big0/590/Pizza_Closeup_Sausage_Olive_Bokeh_Sliced_food_573425_1280x854.jpg" class="img-fluid"></a>
-                  </img>
-              </div>
+                  <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Make an account</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
 
-                <div class="modal-body mx-3">
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="inputEmail4">Email</label>
-                      <input type="email" class="form-control" id="inputEmail4">
+                  <div class="modal-body mx-3">
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputPassword4">Password</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                      </div>
                     </div>
-                    <div class="form-group col-md-6">
-                      <label for="inputPassword4">Password</label>
-                      <input type="password" class="form-control" id="inputPassword4">
+                    <div class="form-group">
+                      <label for="inputAddress">Address</label>
+                      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+                    <div class="form-group">
+                      <label for="inputAddress2">Address 2</label>
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="inputState">Province</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>British Columbia</option>
+                          <option>Other</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label for="inputZip">Zip</label>
+                        <input type="text" class="form-control" id="inputZip">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                          Remember me
+                        </label>
+                      </div>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                  
+                  <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-primary">Sign Up</button>
                   </div>
-                  <div class="form-group">
-                    <label for="inputAddress2">Address 2</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="inputCity">City</label>
-                      <input type="text" class="form-control" id="inputCity">
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label for="inputState">Province</label>
-                      <select id="inputState" class="form-control">
-                        <option selected>British Columbia</option>
-                        <option>Other</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-2">
-                      <label for="inputZip">Zip</label>
-                      <input type="text" class="form-control" id="inputZip">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="gridCheck">
-                      <label class="form-check-label" for="gridCheck">
-                        Remember me
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                
-
-                <div class="modal-footer d-flex justify-content-center">
-                  <button class="btn btn-primary">Sign Up</button>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="text-center">
-            <a href="" class="btn btn-primary btn-rounded mb-4" data-toggle="modal" data-target="#modalSignUpForm">Sign Up</a>
-          </div>
+            <!--Sign in pop-up-->
+            <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
 
-
-
-          <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-          aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-
-                <div class="modal-header text-center">
-                  <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-
-                <div class="modal-body mx-3">
-                  <div class="md-form mb-5">
-                    <i class="fas fa-envelope prefix grey-text"></i>
-                    <input type="email" id="defaultForm-email" class="form-control validate">
-                    <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+                  <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                   </div>
 
-                  <div class="md-form mb-4">
-                    <i class="fas fa-lock prefix grey-text"></i>
-                    <input type="password" id="defaultForm-pass" class="form-control validate">
-                    <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
-                  </div>
+                  <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                      <i class="fas fa-envelope prefix grey-text"></i>
+                      <input type="email" id="defaultForm-email" class="form-control validate">
+                      <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+                    </div>
 
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                  <button class="btn btn-primary">Log In</button>
+                    <div class="md-form mb-4">
+                      <i class="fas fa-lock prefix grey-text"></i>
+                      <input type="password" id="defaultForm-pass" class="form-control validate">
+                      <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-primary">Log In</button>
+                  </div>
                 </div>
               </div>
             </div>
+
+
+            <div class="text-center">
+              <a href="" class="btn btn-primary btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Login</a>
+            </div>
+
           </div>
-
-
-          <div class="text-center">
-            <a href="" class="btn btn-primary btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
-              Log In</a>
-          </div>
-
         </div>
       </div>
 
 
       <!-- Optional JavaScript -->
-      <script src="js/nav.js"></script>
 
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -7,7 +7,7 @@ var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/14J1dPNFRejP9
       }
 
       function showInfo(data, tabletop) {
-        alert('Successfully processed!')
+        //alert('Successfully processed!')
         console.log(data);
       }
 
