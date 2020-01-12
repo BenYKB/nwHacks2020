@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  <script src="js/scripts_search_order_list.js" charset="utf-8"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="css/styles_search_order_list.css">
+  <title>Message Board</title>
+</head>
+  <body>
+
+    <!--
+    <div class="sidenav">
+      <a href="#add-post">Add Post</a>
+      <a href="#searchid">Food Search</a>
+    </div>
+    -->
+
+    <div class="container main">
+
+      <div class="style-top-of-page container">
+        <h1>PizzaShare</h1>
+      </div>
+
+      <div class="container style-new-post-form">
+        <h2>Post Your Order Here!</h2>
+        <form id="add-post">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="name"><i class="glyphicon glyphicon-user"></i> Name: </label>
+                <input id="name" class="form-control" type="text" placeholder="Enter Your Name">
+              </div>
+              <div class="form-group">
+                <label for="header"> <i class="glyphicon glyphicon-pencil"></i> Location: </label>
+                <input id="header" class="form-control" type="text" placeholder="Enter Your Location">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="post"><i class="glyphicon glyphicon-align-justify"></i> Food Description: </label>
+                <textarea id = "post" class="form-control" type="text" placeholder="What kind of food are you ordering?" name="message" rows="4" cols="33" maxlength="1000"
+                wrap="hard"></textarea>
+              </div>
+              <button id="submit-post" type="submit" class="btn btn-default"> <i class="glyphicon glyphicon-plus"></i> Add Post</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container style-search-form">
+        <form id = "searchid">
+          <div class=" form-group">
+            <label for="search">Search Food:</label>
+            <input id="search" class="form-control" type="text" placeholder="Enter a location to search">
+          </div>
+          <button id="search-post" type="submit" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-search"></i> Search</button>
+        </form>
+        <div id = "searchPerson">
+        </div>
+      </div>
+
+      <div id="results"></div>
+
+    </div>
+  </body>
+</html>
