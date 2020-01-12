@@ -18,7 +18,7 @@
 </head>
 
 <body>
-
+   
     <!--
     <div class="sidenav">
       <a href="#add-post">Add Post</a>
@@ -26,69 +26,69 @@
     </div>
     -->
 
-    <div class = "container">
-      <div class="header">
-        <h1>PizzaShare</h1>
-      </div>
-
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="post_order.html">Post an order</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="search_order_map.html">Search by map view</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Current orders</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="setup_payment.html">Setup payment</a>
-        </li>
-      </ul>
-
-      <div class="container style-new-post-form">
-        <h2>Post Your Order Here!</h2>
-        <form id="add-post">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="name"><i class="glyphicon glyphicon-user"></i> Name: </label>
-                <input id="name" class="form-control" type="text" placeholder="Enter Your Name">
-              </div>
-              <div class="form-group">
-                <label for="header"> <i class="glyphicon glyphicon-pencil"></i> Location: </label>
-                <input id="header" class="form-control" type="text" placeholder="Enter Your Location">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="post"><i class="glyphicon glyphicon-align-justify"></i> Food Description: </label>
-                <textarea id = "post" class="form-control" type="text" placeholder="What kind of food are you ordering?" name="message" rows="4" cols="33" maxlength="1000"
-                wrap="hard"></textarea>
-              </div>
-              <button id="submit-post" type="submit" class="btn btn-primary"> <i class="glyphicon glyphicon-plus"></i> Add Post</button>
-            </div>
-          </div>
-        </form>
-      </div>
-
-      <div class="container style-search-form">
-        <form id = "searchid">
-          <div class=" form-group">
-            <label for="search">Search Food:</label>
-            <input id="search" class="form-control" type="text" placeholder="Enter a location to search">
-          </div>
-          <button id="search-post" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Search</button>
-        </form>
-        <div id = "searchPerson">
+    <div class="container">
+        <div class="header">
+            <img SRC="twitter_header_photo_1.png" ALT="PizzaShare" WIDTH=500 HEIGHT=159>
         </div>
-      </div>
 
-      <div id="results"></div>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="post_order.html">Post an order</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="search_order_map.html">Search by map view</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Current orders</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="setup_payment.html">Setup payment</a>
+            </li>
+        </ul>
+
+        <div class="container style-new-post-form">
+            <h2>Post Your Order Here!</h2>
+            <form id="add-post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name"><i class="glyphicon glyphicon-user"></i> Name: </label>
+                            <input id="name" class="form-control" type="text" placeholder="Enter Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="header"> <i class="glyphicon glyphicon-pencil"></i> Location: </label>
+                            <input id="header" class="form-control" type="text" placeholder="Enter Your Location">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="post"><i class="glyphicon glyphicon-align-justify"></i> Food Description: </label>
+                            <textarea id="post" class="form-control" type="text" placeholder="What kind of food are you ordering?" name="message" rows="4" cols="33" maxlength="1000"
+                                      wrap="hard"></textarea>
+                        </div>
+                        <button id="submit-post" type="submit" class="btn btn-primary"> <i class="glyphicon glyphicon-plus"></i> Add Post</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="container style-search-form">
+            <form id="searchid">
+                <div class=" form-group">
+                    <label for="search">Search Food:</label>
+                    <input id="search" class="form-control" type="text" placeholder="Enter a location to search">
+                </div>
+                <button id="search-post" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Search</button>
+            </form>
+            <div id="searchPerson">
+            </div>
+        </div>
+
+        <div id="results"></div>
 
     </div>
-  </body>
+</body>
 </html>
